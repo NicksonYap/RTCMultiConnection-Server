@@ -1,9 +1,9 @@
-FROM node
 
-RUN git clone https://github.com/muaz-khan/RTCMultiConnection-Server \
-    && cd RTCMultiConnection-Server \
-    && npm install
+FROM node:12.18.3-alpine
+WORKDIR /app
+ADD ./ /app
 
-CMD (cd RTCMultiConnection-Server && node server.js)
+RUN npm install
 
-EXPOSE 9001
+# CMD [ "npm", "run", "server" ]
+CMD [ "node", "server.js"]
