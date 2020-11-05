@@ -1,2 +1,2 @@
-npm start
+node server --ssl
 pause
